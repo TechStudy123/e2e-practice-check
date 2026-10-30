@@ -45,7 +45,7 @@ def test_borrow(page: Page):
     page.get_by_label("返す日").fill(due)
     page.get_by_label("使う目的").fill("会議で使う")
     page.get_by_role("button", name="貸し出しを登録").click()
-    expect(page.get_by_role("status")).to_have_text("プロジェクター を貸し出しました")
+    expect(page.get_by_role("status")).to_have_text("プロジェクター の貸し出しを登録しました")
     expect(row).to_contain_text("貸出中")
 
 

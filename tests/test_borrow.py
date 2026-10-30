@@ -10,7 +10,7 @@ def test_borrow_projector(logged_in: Page) -> None:
     ItemListPage(logged_in).open_borrow("プロジェクター")
     due = dt.date.today() + dt.timedelta(days=3)
     BorrowPage(logged_in).borrow(due.isoformat(), "会議で使う")
-    expect(logged_in.get_by_role("status")).to_have_text("プロジェクター を貸し出しました")
+    expect(logged_in.get_by_role("status")).to_have_text("プロジェクター の貸し出しを登録しました")
     expect(logged_in.get_by_role("row", name="プロジェクター")).to_contain_text("貸出中")
 
 

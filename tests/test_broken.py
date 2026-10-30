@@ -12,7 +12,7 @@ def test_borrow_webcam(logged_in: Page) -> None:
     logged_in.get_by_role("textbox", name="返す日").fill(due.isoformat())
     logged_in.get_by_role("textbox", name="使う目的").fill("研修で使う")
     logged_in.get_by_role("button", name="貸し出しを登録").click()
-    expect(logged_in.get_by_role("status")).to_have_text("Web カメラ を貸し出しました")
+    expect(logged_in.get_by_role("status")).to_have_text("Web カメラ の貸し出しを登録しました")
 
 
 def test_news_quick(logged_in: Page) -> None:
