@@ -1,0 +1,18 @@
+[project]
+name = "e2e-practice"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.120",
+    "uvicorn>=0.30",
+    "python-multipart>=0.0.20",
+]
+
+[dependency-groups]
+dev = [
+    "pytest-playwright>=0.10.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "--tracing retain-on-failure --screenshot only-on-failure"
+pythonpath = ["."]
