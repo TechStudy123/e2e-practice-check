@@ -105,7 +105,7 @@ def index(request: Request, q: str = "", done: str = ""):
         rows.append(f'<tr><td>{html.escape(it["name"])}</td><td>{html.escape(it["kind"])}</td>'
                     f'<td>{state}</td><td>{action}</td></tr>')
     count = len(rows)
-    flash = f'<p role="status" class="ok">{html.escape(done)} を貸し出しました</p>' if done else ""
+    flash = f'<p role="status" class="ok">{html.escape(done)} の貸し出しを登録しました</p>' if done else ""
     body = f"""{flash}
 <form method="get" action="/" role="search">
 <label>備品をさがす <input name="q" value="{html.escape(q)}" placeholder="名前か種類"></label>
